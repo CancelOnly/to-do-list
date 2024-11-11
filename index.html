@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    
+    <header>
+    
+    <div class="row up">
+        
+    <div class="form">
+    <input class="input" placeholder="Search..." required="" type="text">
+    <span class="input-border"></span>
+       
+    </div>   
+     
+    <div class="user-nav">
+    <img src="/img/bell-ring-outline.svg" alt="">
+   
+    <div class="greeting">
+    <h2>Welcome</h2>
+    <h3>Mr. Rick</h3>
+    </div>
+   
+    <img class="avatar" src="./img/rick.jpg" alt="avatar">
+    </div>
+    </div>
+   
+    <div class="row down">
+        
+ 
+    
+    <div class="btns">
+    <ul>
+    <button class="button" role="button"><li>Overview</li></button>
+    <button class="button" role="button"><li>New</li></button>
+    <button class="button" role="button"><li>Upload</li></button>
+    <button class="button" role="button"><li>Share</li></button>
+    </ul>
+    </div>
+           
+    
+    
+    </div>
+   
+    
+    </header>
+ 
+    <nav>
+        <!-- <div class="logo-bg">
+        <img class="logo" src="./img/evory.png" alt="logo">
+        </div>
+         -->
+    <div class="nav-style">
+    <ul>
+        <li class="logo"><img src="./img/evory.png" alt="logo"></li>
+        <li>Home</li>
+        <li>Profile</li>
+        <li>Messages</li>
+        <li>History</li>
+        <li>Tasks</li>
+        <li>Communities</li>
+    </ul>
+    <ul>
+        <li>Settings</li>
+        <li>Support</li>
+        <li>Privacy</li>
+    </ul>
+    </div>
+    </nav>
+
+    <main class="content">
+        <div class="projects">
+            <h3>To-Do List</h3>
+            
+             <div class="mini-panel">
+                <input class="input input-chores" placeholder="Add Task" required="" type="text">
+                <span class="input-border"></span>
+                <button class="button btn-chores" type="button">add</button>
+                
+                
+                <div class="total"> <h3>Total: R$ 0,00</h3></div>
+            </div>   
+            
+            <div class="cards">
+            <!--     <div class="card blue">
+                <h5 class="card-title">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card yellow">
+                <h5 class="card-title ">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card red">
+                <h5 class="card-title">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card big">
+                <h5 class="card-title big">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card">
+                <h5 class="card-title">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card">
+                <h5 class="card-title ">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card">
+                <h5 class="card-title">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card blue">
+                <h5 class="card-title">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card yellow">
+                <h5 class="card-title ">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                <div class="card red">
+                <h5 class="card-title">Super Cool Project</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptas nulla, error ea aliquam saepe vitae velit esse eum quidem.</p>
+                <div class="icons">
+                    <img src="./img/star-plus-outline.svg" alt="">
+                    <img src="./img/eye-plus-outline.svg" alt="">
+                    <img src="./img/source-branch.svg" alt="">
+                </div>
+                </div>
+                
+                </div> -->
+            </div>
+        </div>
+   
+    <!-- Side Content -->
+        <!-- Announcements -->
+        <div class="announcements">
+            <h3>Announcements</h3>
+            <ul class="card">
+                <li class="announcement">
+                    <h5 class="card-title-side">Site Maintence</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus omnis doloremque iusto, soluta quia eaque a sunt laboriosam maiores consectetur</p>
+                </li>
+                  <li class="announcement">
+                    <h5 class="card-title-side">Pay Day</h5>
+                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam fuga reiciendis possimus debitis a eius qui voluptatibus maxime</p>
+                </li>
+                 <li class="announcement">
+                    <h5 class="card-title-side">Update Privacy Policy</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur assumenda consequatur provident error architecto, iste veritatis...</p>
+                </li>
+            </ul>
+       
+        </div>
+        
+        <!-- Trending -->
+        <div class="trending">
+        <h3>Trending</h3>
+        <ul class="card">
+            <!-- List of all trending people-->
+            <li class="trend trend-1">
+                <div class="gh-avatar"></div>
+                <div class="account">
+                    <p class="username">@cancel_only</p>
+                    <p class="name card-text">With Balanced Steps</p>
+                </div>
+            </li>
+            <li class="trend trend-2">
+                <div class="gh-avatar2"></div>
+                <div class="account">
+                    <p class="username">@morgan</p>
+                    <p class="name card-text">Super Cool Project</p>
+                </div>
+            </li>
+            <li class="trend trend-3">
+                <div class="gh-avatar3"></div>
+                <div class="account">
+                    <p class="username">@kendall</p>
+                    <p class="name card-text">Life Changing App</p>
+                </div>
+            </li>
+            <li class="trend trend-4">
+                <div class="gh-avatar4"></div>
+                <div class="account">
+                    <p class="username">@alex</p>
+                    <p class="name card-text">No Traffic Maker</p>
+                </div>
+            </li>
+        </ul>
+        </div>
+     </main>
+</body>
+</html>
