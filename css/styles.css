@@ -240,12 +240,6 @@ nav ul li:not(:first-child):hover {
   margin-top: auto;
 }
 
-.input-cell {
-  margin-right: 10px; /* Espaço entre o input e o botão */
-  padding: 5px;
-  width: 60px; /* Define uma largura fixa ou ajustável */
-}
-
 .delete {
   background-color: red;
   color: white;
@@ -341,7 +335,7 @@ nav ul li:not(:first-child):hover {
   grid-area: announcements;
 }
 
-.announcements h3 { 
+.announcements h3 {
   margin-bottom: 0.5em;
 }
 
@@ -494,11 +488,13 @@ nav ul li:not(:first-child):hover {
 }
 
 .input-cell {
-  width: 10em;
+  width: 5em;
+  padding: 5px;
+  height: 2.5em;
 }
 
 .input-edit {
-  width: 18rem;
+  width: auto;
   padding-block: 0.6em;
 }
 
