@@ -17,8 +17,16 @@ function saveToLocalStorage() {
         const valueInput = card.querySelector('.input-cell')
         const value = valueInput ? valueInput.value : '';
         
+        const color = card.classList.contains('blue') 
+        ? 'blue'
+        : card.classList.contains('yellow')
+            ? 'yellow'
+            :card.classList.contains('red')
+                ? 'red'
+                : 'default'
+        
         if (title || comment || value) {
-            cards.push({ title, comment, value });
+            cards.push({ title, comment, value, color });
         }
     });
     
@@ -28,7 +36,7 @@ function saveToLocalStorage() {
 function loadFromLocalStorage() {
     const saveCards = JSON.parse(localStorage.getItem('cards')) || [];
     saveCards.forEach(cardData => {
-        createChores(cardData.title, cardData.comment, cardData.value);
+        createChores(cardData.title, cardData.comment, cardData.value, cardData.color);
     });
     updateTotal();
 }
@@ -43,6 +51,11 @@ function createCard () {
     cardTitle.classList.add('card-title')
     card.appendChild(cardTitle)
     
+    //add event edit title
+    cardTitle.addEventListener('click', function() {
+        editCardTitle(cardTitle)
+    })
+    
     //card content
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body')
@@ -54,11 +67,34 @@ function createCard () {
     commentBox.placeholder = 'More details...'
     cardBody.appendChild(commentBox)
     
+    commentBox.addEventListener('input', saveToLocalStorage);
     
     //footer card
     const cardFooter = document.createElement('div')
     cardFooter.classList.add('card-footer');
     card.appendChild(cardFooter)
+    
+    //div for btns
+    const btnPanel = document.createElement('div')
+    btnPanel.classList.add('button-panel');
+    cardBody.appendChild(btnPanel)
+    
+    //cria btns cor
+    
+    const colors = ['default', 'blue', 'yellow', 'red'];
+    colors.forEach(color => {
+        const btnColor = document.createElement('button');
+        btnColor.classList.add('color-button', color)
+        btnColor.setAttribute('data-color', color)
+        btnPanel.appendChild(btnColor)
+        
+        btnColor.addEventListener('click', function() {
+            const selectedColor = this.getAttribute('data-color');
+            card.classList.remove('blue', 'yellow', 'red', 'default')
+            card.classList.add(selectedColor);
+            saveToLocalStorage();
+        })
+    })    
     
     return card
 }
@@ -69,6 +105,33 @@ inputChores.addEventListener('keypress', function (e) {
         createChores(inputChores.value);
     }
 });
+
+function editCardTitle(titleElement) {
+    const currentTitle = titleElement.textContent;
+    
+    //edit title
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = currentTitle;
+    input.classList.add('input', 'input-edit');
+    
+    titleElement.replaceWith(input)
+    
+    input.focus();
+    
+    input.addEventListener('blur', function() {
+        const newTitle = input.value.trim() || currentTitle;
+        titleElement.textContent = newTitle;
+        input.replaceWith(titleElement);
+        saveToLocalStorage();
+    });
+    
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            input.blur();
+        }
+    });
+}
 
 function newBtnDelete(card) {
     const cardFooter = card.querySelector('.card-footer');
@@ -88,12 +151,23 @@ function newBtnDelete(card) {
     
 }
 
+function newBtnRemind(card) {
+    const cardFooter = card.querySelector('.card-footer');
+    
+    //cria o btn
+    const btnRemind = document.createElement('button');
+    btnRemind.innerText = 'icon';
+    btnRemind.setAttribute('class', 'calendar button');
+    
+    cardFooter.appendChild(btnRemind);
+}
+
 function clearInput() {
     inputChores.value = '';
     inputChores.focus();
 }
 
-function createChores(textInput, savedComment = '', savedValue = '') {
+function createChores(textInput, savedComment = '', savedValue = '', savedColor = 'default') {
    
     const card = createCard();
     const cardTitle = card.querySelector('.card-title');
@@ -102,9 +176,13 @@ function createChores(textInput, savedComment = '', savedValue = '') {
     const commentBox = card.querySelector('.comment-box')
     commentBox.value = savedComment;
     
+    card.classList.remove('default', 'blue', 'yellow', 'red');
+    card.classList.add(savedColor)
+    
     chores.appendChild(card)
     
     createCell(card, savedValue)
+    newBtnRemind(card);
     newBtnDelete(card);
     
     saveToLocalStorage();
@@ -122,7 +200,10 @@ function createCell(card, savedValue = '') {
     valueInput.value = savedValue;
     
     cardFooter.appendChild(valueInput)   
-    valueInput.addEventListener('input', updateTotal);  
+    valueInput.addEventListener('input', () => {
+        updateTotal();
+        saveToLocalStorage();
+    });  
     
    /*  const numericValue = parseFloat(savedValue.replace(',', '.')) || 0;
     valueInput.value = numericValue.toFixed(2); */

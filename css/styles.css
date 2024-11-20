@@ -79,10 +79,6 @@ svg {
   border-radius: 50%;
 }
 
-.avatar:hover {
-  box-shadow: 0 0 8px 0 white;
-}
-
 .down {
   display: flex;
   justify-content: space-between;
@@ -209,9 +205,16 @@ nav ul li:not(:first-child):hover {
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px -4px rgb(0 0 0 / 0.1);
 }
 
-.card.body {
+.card-body {
   width: 100%;
   height: auto;
+  display: inline-flex;
+}
+
+.button-panel {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5em;
 }
 
 .comment-box {
@@ -219,7 +222,7 @@ nav ul li:not(:first-child):hover {
   font-size: 0.9rem;
   background-color: #37373e;
   width: 90%;
-  height: 100%;
+  height: 80%;
   padding-inline: 0.5em;
   padding-block: 0.7em;
   border: none;
@@ -232,9 +235,9 @@ nav ul li:not(:first-child):hover {
   width: 100%;
   height: 2em;
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  margin-top: auto; 
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
 }
 
 .input-cell {
@@ -253,6 +256,27 @@ nav ul li:not(:first-child):hover {
 
 .delete:hover {
   background-color: darkred;
+}
+
+.color-button {
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0.1em;
+  border-radius: 50%;
+  border: solid 1px black;
+  cursor: pointer;
+}
+
+.color-button .blue {
+  background: #4488c5;
+}
+
+.color-button .yellow {
+  background: #df9c28;
+}
+
+.color-button .red {
+  background: #c55656;
 }
 
 .projects .blue {
@@ -310,10 +334,15 @@ nav ul li:not(:first-child):hover {
   padding: 2rem;
   border-radius: 0.6rem;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px -4px rgb(0 0 0 / 0.1);
+  transition: background-color 0.3s ease;
 }
 
 .announcements {
   grid-area: announcements;
+}
+
+.announcements h3 { 
+  margin-bottom: 0.5em;
 }
 
 .announcement {
@@ -428,6 +457,10 @@ nav ul li:not(:first-child):hover {
   touch-action: manipulation;
 }
 
+.calendar {
+  width: 4em;
+}
+
 .button:hover,
 .button:focus {
   opacity: 0.75;
@@ -462,6 +495,11 @@ nav ul li:not(:first-child):hover {
 
 .input-cell {
   width: 10em;
+}
+
+.input-edit {
+  width: 18rem;
+  padding-block: 0.6em;
 }
 
 /* Hover on Input */
